@@ -1,23 +1,22 @@
 class users {
     constructor() {
-        this.ApiRest = 'https://ge98b58f620aa8b-jk6qaf05q3cydvl5.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client';
+         this.ApiRest = 'https://ge98b58f620aa8b-jk6qaf05q3cydvl5.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client';
         //this.userlist = 'jsjs';
+        this.data;
     }
 
-    GetUsers() {
-        let userlist;
-        var request = $.ajax({
+    GetItems() {
+        return $.ajax({
             method: "GET",
             url: this.ApiRest
         });
-        return request;
     }
 
-    AddUser() {
+    AddItem(dates) {
         $.ajax({
             method: "POST",
             url: this.ApiRest,
-            data: {"NAME":"JHOJANN", "EMAIL":"JHOJANN.TRIANA@GMAIL.COM", "AGE":18},
+            data: dates,
             success: function () {
                 alert('Se ha creado el usuario');
             },
@@ -28,8 +27,27 @@ class users {
     }
 }
 
-let u = new users();
-let userslist = u.GetUsers();
+class cabañas extends users{
+    constructor () {
+        super();
+        this.ApiRest = 'https://ge98b58f620aa8b-jk6qaf05q3cydvl5.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/cabin/cabin';
+    }
+}
 
-console.log(userslist.responseJSON)
+class messages extends users{
+    constructor () {
+        super();
+        this.ApiRest = 'https://ge98b58f620aa8b-jk6qaf05q3cydvl5.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/cabin/cabin';
+    }
+}
+
+let u = new users();
+let c = new cabañas();
+let m = new messages();
+
+c.AddItem({"brand":"holis", "rooms":7, "category_id":8, "name":"jhojannnn"});
+console.log(c.GetItems()) /*ver resultados por consola*/
+
+
+
 
