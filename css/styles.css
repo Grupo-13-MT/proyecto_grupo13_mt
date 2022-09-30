@@ -1,0 +1,356 @@
+:root {
+  --blanco: #ffffff;
+  --negro: #212121;
+  --primario: #FFC107;
+  --secundario: #664007;
+  --gris: #757575;
+  --grisClaro: #DDE9F3;
+}
+
+html {
+  font-size: 62.5%;
+  /*para acomodar el tanaaño del rem*/
+  box-sizing: border-box;
+}
+
+td{
+  border: solid black 1px;
+}
+
+*,
+*:before,
+*:after {
+  /* *=todo*/
+  box-sizing: inherit;
+  /*premite que el padding, border no afecte al tamaño de los campos*/
+}
+
+body {
+  font-size: 16px;
+  /*1rem = 10px*/
+  font-family: 'Krub', sans-serif;
+  background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+  /*Fondo del body con transicion de color de gris a blanco*/
+}
+
+z
+
+td{
+  width: 100%;
+}
+
+h1.titulo {
+  color: var(--negro);
+  text-align: center;
+  font-size: 3.8rem
+}
+
+
+.sombra {
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(70, 96, 148, 1);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(70, 96, 148, 1);
+  box-shadow: 0px 0px 8px 0px rgba(70, 96, 148, 1);
+  background-color: var(--blanco);
+
+}
+
+.titulo span {
+  font-size: 2rem;
+  color: var(--negro);
+}
+
+.barra {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.background {
+  background-color: var(--secundario);
+
+}
+
+.button-is-success {
+  text-align: right;
+}
+
+.barra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.button-volver {
+  background-color: rgb(196, 39, 39);
+  /*color de fondo*/
+  color: var(--blanco);
+  /*color de texto*/
+  padding: 1rem 2rem;
+  /*tamaño en bordes*/
+  margin-top: 3rem;
+  /*margen arriba*/
+  font-size: 2rem;
+  /*tamaño de letra*/
+  text-decoration: none;
+  /*quitar decotaciones del texto*/
+  text-transform: uppercase;
+  /*converiir en mayuscula*/
+  font-weight: bold;
+  /*negrita*/
+  border-radius: .4rem;
+  /*Borde curvo*/
+  width: 70%;
+  text-align: left;
+  /*centrar texto*/
+  border: none;
+  /*Quitar borde*/
+}
+
+
+@media (min-width: 768px) {
+  .barra {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.background a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+.background a:hover {
+  background-color: var(--primario);
+  color: var(--negro);
+}
+
+.hero {
+  background-image: url(../img/hero.jpg);
+  /*poner imagen en el fondo*/
+  background-repeat: no-repeat;
+  /*no repetir imagen*/
+  background-size: cover;
+  height: 200px;
+  padding: 20px;
+  /*aplicado en los bordes*/
+  position: relative;
+  /*posicion padre relativa para ajustar los hijos*/
+  margin-bottom: 2rem;
+  /*Separar la caja en el lado de abajo*/
+}
+
+.contenido-hero {
+  position: absolute;
+  /*posicion de hijo para acomodar en el padre*/
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Color y tranpariencia*/
+  background-color: rgb(0, 0, 0 / 70%);
+  /*Color y tranpariencia*/
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  /*acomodar textos hacia la derecha*/
+  flex-direction: column;
+  /*Acomodar textos de forma vertical*/
+  align-items: center;
+  /*Sirve con los textos vericales para centrar horizoontalmente*/
+  justify-content: center;
+  /*justificar el texto de forma vertical para centrar*/
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+  color: var(--blanco);
+}
+
+.ubicacion {
+  display: flex;
+  align-items: flex-end;
+  /*alienar texto vertical hacia abajo*/
+}
+
+.boton {
+  background-color: rgb(18, 116, 18);
+  /*color de fondo*/
+  color: var(--blanco);
+  /*color de texto*/
+  padding: 1rem 4rem;
+  /*tamaño en bordes*/
+  margin-top: 3rem;
+  /*margen arriba*/
+  font-size: 2rem;
+  /*tamaño de letra*/
+  text-decoration: none;
+  /*quitar decotaciones del texto*/
+  text-transform: uppercase;
+  /*converiir en mayuscula*/
+  font-weight: bold;
+  /*negrita*/
+  border-radius: .5rem;
+  /*Borde curvo*/
+  width: 70%;
+  text-align: center;
+  /*centrar texto*/
+  border: none;
+  /*Quitar borde*/
+}
+
+.boton:hover {
+  cursor: pointer;
+}
+
+/*utilidades*/
+.w-100 {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .w-100 {
+    width: auto;
+    margin-right: 1rem;
+  }
+}
+
+.flex {
+  display: unset;
+}
+
+.alinear-derecha {
+  justify-content: flex-end;
+}
+
+@media (min-width: 720px) {
+  .boton {
+    width: auto;
+  }
+}
+
+/*texto auto apartir de 720px*/
+
+@media (min-width: 100px) {
+  .contenido-hero {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.cuerpo {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 3rem;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(33, 68, 138, 1);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(33, 68, 138, 1);
+  box-shadow: 0px 0px 8px 0px rgba(33, 68, 138, 1);
+  /*aplicacion de sombra con cssmatic*/
+  background-color: var(--blanco);
+  border-radius: 2rem;
+  /*Borde redondeado*/
+}
+
+@media (min-width: 720px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+  }
+}
+
+.servicio {
+  display: flex;
+  /*Poner textos uno al lado del otro*/
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: normal;
+  /*tipo de letra normal*/
+}
+
+.servicio .icono {
+  height: 15rem;
+  /*zona ancho*/
+  width: 15rem;
+  /*zona alto*/
+  background-color: var(--primario);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*justificar contenido izquierda a dercha*/
+}
+
+.servicio p {
+  text-align: center;
+  line-height: 2;
+  /*distancia de enntre lineas de texto*/
+}
+
+
+
+.formulario {
+  background-color: var(--gris);
+  width: min(70rem, 100%);
+  /** Utilizar el valor mas pequeño**/
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 3rem;
+}
+
+.formulario_mensaje {
+  background-color: var(--gris);
+  width: min(70rem, 100%);
+  /** Utilizar el valor mas pequeño**/
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 3rem;
+}
+
+.formulario fieldset {
+  border: none;
+  /*Quitar borde del formulario con fieldset*/
+}
+
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--primario);
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.formulario label {
+  text-align: left;
+  padding: 1rem;
+}
+
+.contenedor-campos {}
+
+.campos {
+  margin-bottom: 1rem;
+}
+
+.campos label {
+  color: var(--blanco);
+  margin-bottom: 0.5rem;
+  font-weight: bolder;
+  font-size: 2rem;
+  display: block;
+}
+
+.input-text {
+  width: 100%;
+  padding: 1.5rem;
+  border: none;
+  border-radius: .5rem;
+  font-size: 2rem;
+}

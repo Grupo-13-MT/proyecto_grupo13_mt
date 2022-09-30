@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="preload" href="css/normalize.css" as="style">
-  <link href="stylesheet" href="css/normalize.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="stylesheet" href="css/normalize.css" <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https: //fonts.googleapis.com/css2? family = Krub: wght @ 400; 700 & display = swap " rel=" stylesheet ">"
   <link rel="preload" href="css/styles.css" as="style">
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body onload="GetItems('/cabin/cabin', '#clients')">
+<body>
   <header>
     <h1 class="titulo">Cabañas<span> G13 MT</span> </h1>
   </header>
@@ -41,25 +40,29 @@
       </div>
     </div>
   </section>
-  <main class="cuerpo">
+  <section>
+    <main class="cuerpo">
+      <h2>Mensajes</h2>
+      <form class="formulario" action="index.html" method="post" id="messagef">
+        <fieldset>
 
-    <a href="agregar_cabaña.html" class="button-is-success">Agregar</a>
-    <table class="table" id="cabañas">
-      <caption>Cabañas</caption>
-      <thead>
-        <tr>
-          <th>BRAND</th>
-          <th>ROOMS</th>
-          <th>CATEGORY ID</th>
-          <th>NAME</th>
-        </tr>
-      </thead>
-      <tbody>
+          <legend>Registre su mensaje</legend>
+          <div class="contenedor-campos">
 
-      </tbody>
-    </table>
+            <div class="campos">
+              <label>Mensaje</label>
+              <textarea class="input-text" id="message"></textarea>
+            </div>
 
-    </section>
+        </fieldset>
+        <div class="alinear-derecha flex">
+          <a class="button-volver" href="clientes.html">Cancelar</a>
+          <input class="boton w-100" type="submit" name="" value="Registrar">
+        </div>
+      </form>
+  </section>
+  </main>
+  </section>
 
   </main>
 
@@ -69,17 +72,14 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="js/app.js"></script>
-
   <script>
-    function rcvdta(data) {
-      let table;
-      console.log(data.items[0])
-      for (let index = 0; index < data.items.length; index++) {
-        table += '<tr><td>' + data.items[index].brand + '</td><td>' + data.items[index].rooms + '</td><td>' + data.items[index].category_id + '</td><td>' + data.items[index].name + '</td></tr>';
-      }
-      $('#cabañas').append(table);
-    }
+    document.getElementById('messagef').addEventListener('submit', (e) => {
+      e.preventDefault();
+      //console.log({"name":$('#name')[0].value, "email":$('#email')[0].value, "age":$('#age')[0].value})
+      AddItem('/message/message', { "messagetext": $('#message')[0].value})
+    })
   </script>
+
 </body>
 
 </html>
