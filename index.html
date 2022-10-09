@@ -2,84 +2,23 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="preload" href="css/normalize.css" as="style">
-  <link href="stylesheet" href="css/normalize.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https: //fonts.googleapis.com/css2? family = Krub: wght @ 400; 700 & display = swap " rel=" stylesheet ">"
-  <link rel="preload" href="css/styles.css" as="style">
-  <link href="css/styles.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet">
+    <title>Reservación de cabañas</title>
 </head>
 
-<body onload="GetItems('/cabin/cabin', '#clients')">
-  <header>
-    <h1 class="titulo">Cabañas<span> G13 MT</span> </h1>
-  </header>
-
-  <div class="background">
-    <nav class="barra">
-      <a href="index.html">Cabañas</a>
-      <a href="clientes.html">Clientes</a>
-      <a href="mensajes.html">Mensajes</a>
-    </nav>
-  </div>
-
-  <section class="hero">
-    <div class="contenido-hero">
-      <div class="ubicacion">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="92" height="92"
-          viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <circle cx="12" cy="11" r="3" />
-          <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-        </svg>
-        <p>Mision Tic</p>
-      </div>
-    </div>
-  </section>
-  <main class="cuerpo">
-
-    <a href="agregar_cabaña.html" class="button-is-success">Agregar</a>
-    <table class="table" id="cabañas">
-      <caption>Cabañas</caption>
-      <thead>
-        <tr>
-          <th>BRAND</th>
-          <th>ROOMS</th>
-          <th>CATEGORY ID</th>
-          <th>NAME</th>
-        </tr>
-      </thead>
-      <tbody>
-
-      </tbody>
-    </table>
-
-    </section>
-
-  </main>
-
-  <footer>
-    <p>Todos los derechos reservados</p>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  <script src="js/app.js"></script>
-
-  <script>
-    function rcvdta(data) {
-      let table;
-      console.log(data.items[0])
-      for (let index = 0; index < data.items.length; index++) {
-        table += '<tr><td>' + data.items[index].brand + '</td><td>' + data.items[index].rooms + '</td><td>' + data.items[index].category_id + '</td><td>' + data.items[index].name + '</td></tr>';
-      }
-      $('#cabañas').append(table);
-    }
-  </script>
+<body onload="controller()">
+    <div id="app"></div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="js/env.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/services.js"></script>
+    <script>
+        render('cabañas')
+    </script>
 </body>
 
 </html>

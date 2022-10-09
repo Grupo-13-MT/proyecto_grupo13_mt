@@ -1,0 +1,56 @@
+<header>
+  <h1 class="titulo">Cabañas<span> G13 MT</span> </h1>
+</header>
+
+<div class="background">
+  <nav class="barra">
+    <a href="#" onclick="render('cabañas')">Cabañas</a>
+    <a href="#" onclick="render('clientes')">Clientes</a>
+    <a href="#" onclick="render('mensajes')">Mensajes</a>
+  </nav>
+</div>
+
+<section class="hero">
+  <div class="contenido-hero">
+    <div class="ubicacion">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="92" height="92"
+        viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <circle cx="12" cy="11" r="3" />
+        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+      </svg>
+      <p>Mision Tic</p>
+    </div>
+  </div>
+</section>
+<section>
+  <main class="cuerpo">
+    <h2>Mensajes</h2>
+    <form class="formulario" id="formM" action="index.html" method="post">
+      <fieldset>
+
+        <legend>Registre su mensaje</legend>
+        <div class="contenedor-campos">
+
+          <div class="campos">
+            <label>Mensaje</label>
+            <textarea class="input-text" id="message"></textarea>
+          </div>
+
+      </fieldset>
+      <div class="alinear-derecha flex">
+        <a class="button-volver" href="clientes.html">Cancelar</a>
+        <input class="boton w-100" type="submit" name="" value="Registrar">
+        <button type="button" class="boton w-100" onclick="AgregarMensaje()">Registrar</button>
+      </div>
+    </form>
+</section>
+</main>
+</section>
+
+</main>
+
+<footer>
+  <p>Todos los derechos reservados</p>
+</footer>
