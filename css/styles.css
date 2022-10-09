@@ -177,7 +177,7 @@ h1.titulo {
   }
 } /*texto auto apartir de 720px*/
 
-@@media (min-width: 100px){
+@media (min-width: 100px){
   .contenido-hero {
     display: flex;
     align-items: center;

@@ -21,7 +21,7 @@ function cabañas() {
             row += "<td>" + d[index].brand + "</td>";
             row += "<td>" + d[index].category_id + "</td>";
             row += "<td>" + d[index].name + "</td>";
-            row += "<td>" + d[index].id + "</td>";
+            row += "<td>" + d[index].rooms + "</td>";
             row += '<td><button onclick=UpdateItem('+d[index]+')>Actualizar</button><button onclick="DeleteItem(`/cabin/cabin`,'+d[index].id+')">Eliminar</button></td>';
             row += "</tr>";
             document.getElementById('cabañasl').innerHTML += row;
