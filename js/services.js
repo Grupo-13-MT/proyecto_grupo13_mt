@@ -6,7 +6,7 @@ function GetData(t) {
     return new Promise((resolve, reject) => {
         setTimeout(function () {
             resolve(request.responseJSON.items)
-        }, 700);
+        }, 1000);
     })
 }
 
@@ -31,33 +31,34 @@ function AddItem(t, d) {
 }
 
 function DeleteItem(t, numid) {
-    $.ajax({
-        type: "DELETE",
-        url: env.api + t,
-        data: { id: numid },
-        success: function () {
-            alert('Eliminado');
-        },
-        error: function () {
-            alert('Ha ocurrido un error');
-        }
-    });
+    if (confirm('¿Está segur@ de eliminar el registro?')) {
+        let data = { id: numid }
+        let dataToSend = JSON.stringify(data)
+        $.ajax({
+            url: env.api + t,
+            type: "DELETE",
+            data: dataToSend,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success: function () {
+                alert('Eliminado');
+                location.reload();
+            },
+            error: function () {
+                alert('Ha ocurrido un error');
+            }
+        });
+    }
 }
 
 function UpdateItem(t, d) {
-    data = {
-        brand: 'se actualizó X2',
-        rooms: 2,
-        category_id: 7,
-        name: 'JHOJANN',
-        id: 91
-    }
-    datatosend = JSON.stringify(data)
+
+    let dataToSend = JSON.stringify(d)
     $.ajax({
-        type:"PUT",
         url: env.api + t,
-        //data: d,
-        datatosend,
+        type: "PUT",
+        data: dataToSend,
+        contentType: "application/JSON",
         datatype: "JSON",
         success: function () {
             alert('Actualizado');
@@ -68,7 +69,15 @@ function UpdateItem(t, d) {
     });
 }
 
-UpdateItem('/cabin/cabin', 1)
+//DeleteItem('/cabin/cabin', {id: 91})
+
+/*UpdateItem('/cabin/cabin', {
+    brand: 'sdfasdfasdfasdfasd',
+    rooms: 2,
+    category_id: 7,
+    name: 'JHOJANN',
+    id: 108
+})*/
 
 
 
