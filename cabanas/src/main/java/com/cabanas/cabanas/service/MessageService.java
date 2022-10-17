@@ -1,7 +1,7 @@
 package com.cabanas.cabanas.service;
 
 import com.cabanas.cabanas.repository.MessageRepository;
-import com.cabanas.cabanas.model.Tmessage;
+import com.cabanas.cabanas.model.messages;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,24 +9,25 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MessageService {
+
     @Autowired
     private MessageRepository ur;
 
-    public List<Tmessage> getAll() {
+    public List<messages> getAll() {
         return ur.getAll();
     }
 
-    public Optional<Tmessage> getUser(int id) {
-        return ur.getUser(id);
+    public Optional<messages> getUser(int id) {
+        return ur.getMessage(id);
     }
 
-    public Tmessage SaveUser(Tmessage u) {
+    public messages SaveUser(messages u) {
         if (u.getId() == null) {
-            return ur.SaveUser(u);
+            return ur.SaveMessage(u);
         } else {
-            Optional<Tmessage> paux = ur.getUser(u.getId());
+            Optional<messages> paux = ur.getMessage(u.getId());
             if (paux.isEmpty()) {
-                return ur.SaveUser(u);
+                return ur.SaveMessage(u);
             } else {
                 return u;
             }

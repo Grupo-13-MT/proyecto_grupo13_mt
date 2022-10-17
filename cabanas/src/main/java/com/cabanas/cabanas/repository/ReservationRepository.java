@@ -17,11 +17,11 @@ public class ReservationRepository {
         return (List<reservation>) crud.findAll();
     }
 
-    public Optional<reservation> getUser(int id) {
+    public Optional<reservation> getReservation(int id) {
         return crud.findById(id);
     }
 
-    public reservation SaveUser(reservation u) {
+    public reservation SaveReservation(reservation u) {
         return crud.save(u);
     }
 }

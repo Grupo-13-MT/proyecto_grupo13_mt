@@ -18,16 +18,16 @@ public class CabinService {
     }
 
     public Optional<cabin> getUser(int id) {
-        return ur.getUser(id);
+        return ur.getCabin(id);
     }
 
     public cabin SaveUser(cabin u) {
         if (u.getId() == null) {
-            return ur.SaveUser(u);
+            return ur.SaveCabin(u);
         } else {
-            Optional<cabin> paux = ur.getUser(u.getId());
+            Optional<cabin> paux = ur.getCabin(u.getId());
             if (paux.isEmpty()) {
-                return ur.SaveUser(u);
+                return ur.SaveCabin(u);
             } else {
                 return u;
             }

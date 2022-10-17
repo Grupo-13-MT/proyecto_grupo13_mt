@@ -18,16 +18,16 @@ public class CategoryService {
     }
 
     public Optional<Tcategory> getUser(int id) {
-        return ur.getUser(id);
+        return ur.getCategory(id);
     }
 
     public Tcategory SaveUser(Tcategory u) {
         if (u.getId() == null) {
-            return ur.SaveUser(u);
+            return ur.SaveCategory(u);
         } else {
-            Optional<Tcategory> paux = ur.getUser(u.getId());
+            Optional<Tcategory> paux = ur.getCategory(u.getId());
             if (paux.isEmpty()) {
-                return ur.SaveUser(u);
+                return ur.SaveCategory(u);
             } else {
                 return u;
             }

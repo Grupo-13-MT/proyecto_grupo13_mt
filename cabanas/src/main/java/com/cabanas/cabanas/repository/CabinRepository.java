@@ -17,11 +17,11 @@ public class CabinRepository {
         return (List<cabin>) crud.findAll();
     }
 
-    public Optional<cabin> getUser(int id) {
+    public Optional<cabin> getCabin(int id) {
         return crud.findById(id);
     }
 
-    public cabin SaveUser(cabin u) {
+    public cabin SaveCabin(cabin u) {
         return crud.save(u);
     }
 }

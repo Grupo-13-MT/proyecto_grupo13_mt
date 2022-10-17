@@ -17,11 +17,11 @@ public class CategoryRepository {
         return (List<Tcategory>) crud.findAll();
     }
 
-    public Optional<Tcategory> getUser(int id) {
+    public Optional<Tcategory> getCategory(int id) {
         return crud.findById(id);
     }
 
-    public Tcategory SaveUser(Tcategory u) {
+    public Tcategory SaveCategory(Tcategory u) {
         return crud.save(u);
     }
 }

@@ -6,12 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "message")
-public class Tmessage implements Serializable {
+public class messages implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,12 +21,11 @@ public class Tmessage implements Serializable {
     private String messageText;
 
     //foraneas: client y cabin
+    /*@OneToMany
+    @JoinColumn(name = "client")
+    private usuario usuario;*/
     @ManyToOne
-    @JoinColumn(name="client")
-    private usuario usuario;
-    
-    @ManyToOne
-    @JoinColumn(name="cabin")
+    @JoinColumn(name = "cabin")
     private cabin cabin;
 
     public Integer getId() {
@@ -43,14 +44,6 @@ public class Tmessage implements Serializable {
         this.messageText = messageText;
     }
 
-    public usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(usuario usuario) {
-        this.usuario = usuario;
-    }
-
     public cabin getCabin() {
         return cabin;
     }
@@ -58,6 +51,5 @@ public class Tmessage implements Serializable {
     public void setCabin(cabin cabin) {
         this.cabin = cabin;
     }
-    
-    
+
 }

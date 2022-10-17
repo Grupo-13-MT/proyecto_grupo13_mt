@@ -18,16 +18,16 @@ public class ReservationService {
     }
 
     public Optional<reservation> getUser(int id) {
-        return ur.getUser(id);
+        return ur.getReservation(id);
     }
 
     public reservation SaveUser(reservation u) {
         if (u.getId() == null) {
-            return ur.SaveUser(u);
+            return ur.SaveReservation(u);
         } else {
-            Optional<reservation> paux = ur.getUser(u.getId());
+            Optional<reservation> paux = ur.getReservation(u.getId());
             if (paux.isEmpty()) {
-                return ur.SaveUser(u);
+                return ur.SaveReservation(u);
             } else {
                 return u;
             }
