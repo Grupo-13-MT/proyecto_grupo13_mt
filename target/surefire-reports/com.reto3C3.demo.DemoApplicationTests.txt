@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.reto3C3.demo.DemoApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.427 s - in com.reto3C3.demo.DemoApplicationTests
