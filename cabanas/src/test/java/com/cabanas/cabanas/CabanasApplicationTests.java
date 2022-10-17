@@ -1,10 +1,10 @@
-package com.reto3C3.demo;
+package com.cabanas.cabanas;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class CabanasApplicationTests {
 
 	@Test
 	void contextLoads() {
