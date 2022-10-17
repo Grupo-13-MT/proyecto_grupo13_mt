@@ -1,31 +1,31 @@
 package com.cabanas.cabanas.service;
 
-import com.cabanas.cabanas.model.usuario;
-import com.cabanas.cabanas.repository.UsuarioRepository;
+import com.cabanas.cabanas.model.cabin;
+import com.cabanas.cabanas.repository.CabinRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioService {
+public class CabinService {
 
     @Autowired
-    private UsuarioRepository ur;
+    private CabinRepository ur;
 
-    public List<usuario> getAll() {
+    public List<cabin> getAll() {
         return ur.getAll();
     }
 
-    public Optional<usuario> getUser(int id) {
+    public Optional<cabin> getUser(int id) {
         return ur.getUser(id);
     }
 
-    public usuario SaveUser(usuario u) {
+    public cabin SaveUser(cabin u) {
         if (u.getId() == null) {
             return ur.SaveUser(u);
         } else {
-            Optional<usuario> paux = ur.getUser(u.getId());
+            Optional<cabin> paux = ur.getUser(u.getId());
             if (paux.isEmpty()) {
                 return ur.SaveUser(u);
             } else {

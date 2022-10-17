@@ -1,31 +1,30 @@
 package com.cabanas.cabanas.service;
 
-import com.cabanas.cabanas.model.usuario;
-import com.cabanas.cabanas.repository.UsuarioRepository;
+import com.cabanas.cabanas.repository.MessageRepository;
+import com.cabanas.cabanas.model.Tmessage;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioService {
-
+public class MessageService {
     @Autowired
-    private UsuarioRepository ur;
+    private MessageRepository ur;
 
-    public List<usuario> getAll() {
+    public List<Tmessage> getAll() {
         return ur.getAll();
     }
 
-    public Optional<usuario> getUser(int id) {
+    public Optional<Tmessage> getUser(int id) {
         return ur.getUser(id);
     }
 
-    public usuario SaveUser(usuario u) {
+    public Tmessage SaveUser(Tmessage u) {
         if (u.getId() == null) {
             return ur.SaveUser(u);
         } else {
-            Optional<usuario> paux = ur.getUser(u.getId());
+            Optional<Tmessage> paux = ur.getUser(u.getId());
             if (paux.isEmpty()) {
                 return ur.SaveUser(u);
             } else {

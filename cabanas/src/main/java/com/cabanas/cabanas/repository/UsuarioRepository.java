@@ -10,18 +10,19 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Repository
 public class UsuarioRepository {
+
     @Autowired
     private UsuarioCrudRepository UCrud;
 
     public List<usuario> getAll() {
-        return (List<usuario>) UCrud.findAll(); 
+        return (List<usuario>) UCrud.findAll();
     }
-    
-    public Optional<usuario> getUser (int id) {
+
+    public Optional<usuario> getUser(int id) {
         return UCrud.findById(id);
     }
-    
-    public usuario SaveUser (usuario u) {
+
+    public usuario SaveUser(usuario u) {
         return UCrud.save(u);
     }
 }
